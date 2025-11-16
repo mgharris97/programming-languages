@@ -7,9 +7,11 @@
 import argparse
 import csv
 import os
+import json
 from csv_parser import csv_parse
 from dir_parser import dir_parse
-import json
+from json_parser import json_parse
+
 
 def main():
     ##Adding arguments to the Argument Parser
@@ -36,6 +38,9 @@ def main():
     elif args.directory:
         dir_path = args.directory
         dir_parse(dir_path)
+    elif args.json:
+        file = args.json
+        json_parse(file)
     else:
         print("No input file or directory specified")
     if args.output:
