@@ -56,7 +56,7 @@ def csv_parse(file_path):
             except ValueError:
                 is_arrival_date = False
             try:
-                if not (arrival_time > departure_time):
+                if not (is_arrival_date and (arrival_time > departure_time)):
                     errors_list.append(f"Line {line_num}: {arrival} → Arrival time occurs before departure → {departure}")
                     continue
             except ValueError:

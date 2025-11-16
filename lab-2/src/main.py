@@ -10,7 +10,6 @@ import os
 import json
 from csv_parser import csv_parse
 from dir_parser import dir_parse
-from json_parser import json_parse
 
 
 def main():
@@ -39,10 +38,14 @@ def main():
         dir_path = args.directory
         dir_parse(dir_path)
     elif args.json:
-        file = args.json
-        json_parse(file)
+        with open(args.json, 'r') as f:
+            valid_flights = json.load(f)
+        for i in valid_flights:
+            print (i)
     else:
         print("No input file or directory specified")
+
+
     if args.output:
         json_out_path = args.output
         with open(json_out_path, mode = 'w') as json_file:
