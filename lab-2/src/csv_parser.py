@@ -8,6 +8,8 @@ import json
 errors_list = []
 valid_flights = []
 
+
+
 def csv_parse(file_path):
     print(f"Opening file: {file_path}")
     with open(file_path, newline='', mode = 'r') as f:
@@ -34,7 +36,10 @@ def csv_parse(file_path):
             if not (2 <= len(i[0]) <= 8 and i[0].isalnum):
                 errors_list.append(f"Line {line_num}: {flight_id} → flight ID not 2-8 alphanumeric character")
                 continue
-            if not(destination.isupper() and len(destination) == 3 and destination.isalpha()):
+            if not(origin.isupper() and len(origin) == 3 and origin.isalpha() and len(set(origin)) > 1):
+                errors_list.append(f"Line {line_num}: {origin} → Invalid origin (not 3 uppercase, non-repeating letters)")
+                continue
+            if not(destination.isupper() and len(destination) == 3 and destination.isalpha() and len(set(destination)) > 1):
                 errors_list.append(f"Line {line_num}: {destination} → Invalid destiantion (not 3 uppercase letters)")
                 continue
             try:
