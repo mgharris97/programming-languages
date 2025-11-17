@@ -26,6 +26,7 @@ def main():
     dir_path = None
     json_path = None
     
+    # -i
     if args.input:
         single_file_path = args.input
         valid, error = csv_parse(single_file_path) #implement parse_directory
@@ -34,18 +35,23 @@ def main():
             for i in error:
                 f.write(i + "\n")
             f.write(f"===End of file [{os.path.basename(single_file_path)}]===\n\n")
+    # -d
     elif args.directory:
         dir_path = args.directory
         dir_parse(dir_path)
+    # -j
     elif args.json:
-        with open(args.json, 'r') as f:
-            valid_flights = json.load(f)
-        for i in valid_flights:
-            print (i)
+        try:
+            with open(args.json, 'r') as f:
+                valid_flights = json.load(f)
+        except FileNotFoundError:
+            print (f"No JSON file found at {args.json}")
+        errors = []
+        #for i in valid_flights:
+            #print (i)
     else:
         print("No input file or directory specified")
-
-
+    # -o
     if args.output:
         json_out_path = args.output
         with open(json_out_path, mode = 'w') as json_file:
