@@ -22,24 +22,36 @@ def main():
     parser.add_argument("-j","--json", metavar="", help="Load existing JSON database instead of parsing CSVs. Format: -j path/to/db.json")
     parser.add_argument("-q", "--query", metavar="", help="Execute queries defined in a JSON file on the loaded database. Format: -q path/to/query.json	")
     args = parser.parse_args()
-    single_file_path = None
-    dir_path = None
-    json_path = None
     
-    # -i
+    valid_flights = []
+    errors = []
+
+    #---------------------------------------------
+    # -i: parse 1 csv file
+    #---------------------------------------------
     if args.input:
         single_file_path = args.input
         valid, error = csv_parse(single_file_path) #implement parse_directory
+        valid_flights = valid
+        errors = error
         with open("Errors.txt", 'a') as f:
             f.write(f"===Start of file [{os.path.basename(single_file_path)}]===\n")
             for i in error:
                 f.write(i + "\n")
             f.write(f"===End of file [{os.path.basename(single_file_path)}]===\n\n")
-    # -d
+
+    #---------------------------------------------
+    # -d: parse a directory of csv files
+    #---------------------------------------------
     elif args.directory:
         dir_path = args.directory
-        dir_parse(dir_path)
-    # -j
+        valid, error = dir_parse(dir_path)
+        valid_flights = valid
+        erros = error
+
+    #---------------------------------------------
+    # -j: load an existing JSON
+    #---------------------------------------------
     elif args.json:
         try:
             with open(args.json, 'r') as f:
@@ -49,14 +61,33 @@ def main():
         errors = []
         #for i in valid_flights:
             #print (i)
+
     else:
-        print("No input file or directory specified")
-    # -o
+        print("No input file or directory specified\n")
+        return
+    #---------------------------------------------
+    # -o: write valid flights
+    #---------------------------------------------
     if args.output:
         json_out_path = args.output
         with open(json_out_path, mode = 'w') as json_file:
             json.dump(valid, json_file, indent=2)
 
+    #---------------------------------------------
+    # -q: load and process queries
+    #---------------------------------------------
+    if args.query:
+        try: 
+            with open(args.query, 'r'):
+                queries = json.load(f)
+        except FileNotFoundError:
+            print("No query file provided\n")
+            return
+        
+        # TODO: process queries here
+        # result = run_queries(valid_flights, queries)
+        # write result to response JSON
+            
 
 
 #call to main()    
