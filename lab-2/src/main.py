@@ -76,17 +76,63 @@ def main():
     #---------------------------------------------
     # -q: load and process queries
     #---------------------------------------------
-    if args.query:
-        try: 
-            with open(args.query, 'r'):
-                queries = json.load(f)
-        except FileNotFoundError:
-            print("No query file provided\n")
-            return
+   if args.query:
+    try: 
+        with open(args.query, 'r') as f:
+            queries = json.load(f)
+    except FileNotFoundError:
+        print("No query file provided\n")
+        return
+    
+
+    def normalize_queries(queries):
+        if isinstance(queries, dict):  # single query → wrap into list
+            return [queries]
+        return queries  # already a list
         
-        # TODO: process queries here
-        # result = run_queries(valid_flights, queries)
-        # write result to response JSON
+
+    queries = normalize_queries(queries)
+
+    # ----------------------------------------
+    # Process Queries
+    # ----------------------------------------
+
+    def run_queries(valid_flights, queries):
+        results = []
+
+        for q in queries:
+            # q is a dictionary of conditions, e.g.:
+            # { "origin": "RIX" } or { "price": 200 }
+
+            filtered = []
+
+            for flight in valid_flights:
+                match = True
+                for key, value in q.items():
+                    # If a flight doesn't have the field or doesn't match → skip
+                    if key not in flight or flight[key] != value:
+                        match = False
+                        break
+                if match:
+                    filtered.append(flight)
+
+            results.append({
+                "query": q,
+                "matches": filtered
+            })
+
+        return results
+    
+
+    # Run query filtering
+    query_results = run_queries(valid_flights, queries)
+
+    # Save to output JSON (default file name)
+    output_file = "query_results.json"
+    with open(output_file, 'w') as out:
+        json.dump(query_results, out, indent=2)
+
+    print(f"Query results written to {output_file}")
             
 
 

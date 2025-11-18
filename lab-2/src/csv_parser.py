@@ -1,3 +1,9 @@
+# csv_parse.py
+# Matthew Harris
+# 241ADB166
+# 11 November, 2025
+# GitHub repo: https://github.com/mgharris97/programming-languages/tree/main/lab-2
+
 import csv
 from datetime import datetime
 import os

@@ -1,3 +1,9 @@
+# dir_parser.py
+# Matthew Harris
+# 241ADB166
+# 11 November, 2025
+# GitHub repo: https://github.com/mgharris97/programming-languages/tree/main/lab-2
+
 import glob
 from csv_parser import csv_parse
 import csv 
