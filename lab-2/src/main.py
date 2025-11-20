@@ -26,6 +26,8 @@ def main():
     valid_flights = []
     errors = []
 
+    
+
     #---------------------------------------------
     # -i: parse 1 csv file
     #---------------------------------------------
@@ -76,63 +78,45 @@ def main():
     #---------------------------------------------
     # -q: load and process queries
     #---------------------------------------------
-   if args.query:
-    try: 
-        with open(args.query, 'r') as f:
-            queries = json.load(f)
-    except FileNotFoundError:
-        print("No query file provided\n")
-        return
-    
-
-    def normalize_queries(queries):
-        if isinstance(queries, dict):  # single query → wrap into list
-            return [queries]
-        return queries  # already a list
+    if args.query:
+        try: 
+            with open(args.query, 'r') as f:
+                queries = json.load(f)
+        except FileNotFoundError:
+            print("No query file provided\n")
+            return
         
 
-    queries = normalize_queries(queries)
+        def normalize_queries(queries):
+            if isinstance(queries, dict): #check if queries is a dictionary
+                 return [queries] #Normalize the dict into a list
+            return queries
 
-    # ----------------------------------------
-    # Process Queries
-    # ----------------------------------------
-
-    def run_queries(valid_flights, queries):
-        results = []
-
-        for q in queries:
-            # q is a dictionary of conditions, e.g.:
-            # { "origin": "RIX" } or { "price": 200 }
-
-            filtered = []
-
-            for flight in valid_flights:
-                match = True
-                for key, value in q.items():
-                    # If a flight doesn't have the field or doesn't match → skip
-                    if key not in flight or flight[key] != value:
-                        match = False
-                        break
-                if match:
-                    filtered.append(flight)
-
-            results.append({
-                "query": q,
-                "matches": filtered
-            })
-
-        return results
-    
-
-    # Run query filtering
-    query_results = run_queries(valid_flights, queries)
-
-    # Save to output JSON (default file name)
-    output_file = "query_results.json"
-    with open(output_file, 'w') as out:
-        json.dump(query_results, out, indent=2)
-
-    print(f"Query results written to {output_file}")
+        def run_queries(valid_flights, queries):
+            results = []
+            for q in queries:
+                matches = []
+                for flight in valid_flights:
+                    match = True
+                    for key, value in q.items():
+                        # If flight doesn't have this field → not a match
+                        if key not in flight:
+                            match = False
+                            break
+                        # Convert everything to string for comparison
+                        if str(flight[key]) != str(value):
+                            match = False
+                            break
+                    if match:
+                        matches.append(flight)
+                results.append({"query": q, "matches": matches})
+            return results
+        
+        queries = normalize_queries(queries)
+        result = run_queries(valid_flights, queries)
+        with open("query_results.json", "w") as f:
+            json.dump(result, f, indent=2)
+        print("Query results written to query_results.json")    
             
 
 
