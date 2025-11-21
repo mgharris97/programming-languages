@@ -8,6 +8,7 @@ import argparse
 import csv
 import os
 import json
+from datetime import datetime
 from csv_parser import csv_parse
 from dir_parser import dir_parse
 
@@ -112,9 +113,17 @@ def main():
                 results.append({"query": q, "matches": matches})
             return results
         
+        STUDENT_ID = "241ADB166"
+        NAME = "Matthew"
+        LAST_NAME = "Harris"
+        DATE = datetime.now()
+        TIME = datetime.now().time()
+        filename = ("response_{NAME}_{LAST_NAME}_{DATE.year}{DATE.month:02d}{DATE.day:02d}_{TIME.hour:02d}{TIME.minute:02d}.json")
+
         queries = normalize_queries(queries)
         result = run_queries(valid_flights, queries)
-        with open("query_results.json", "w") as f:
+        
+        with open(filename, "w") as f:
             json.dump(result, f, indent=2)
         print("Query results written to query_results.json")    
             
