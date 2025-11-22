@@ -74,7 +74,7 @@ def main():
     if args.output:
         json_out_path = args.output
         with open(json_out_path, mode = 'w') as json_file:
-            json.dump(valid, json_file, indent=2)
+            json.dump(valid_flights, json_file, indent=2)
 
     #---------------------------------------------
     # -q: load and process queries
@@ -95,22 +95,75 @@ def main():
 
         def run_queries(valid_flights, queries):
             results = []
+
             for q in queries:
                 matches = []
+
                 for flight in valid_flights:
                     match = True
+
                     for key, value in q.items():
-                        # If flight doesn't have this field → not a match
-                        if key not in flight:
+
+                        # ----------------------------
+                        # Exact match fields
+                        # ----------------------------
+                        if key in ["flight_id", "origin", "destination"]:
+                            if str(flight[key]) != str(value):
+                                match = False
+                                break
+
+                        # ----------------------------
+                        # departure_datetime ≥ query
+                        # ----------------------------
+                        elif key == "departure_datetime":
+                            try:
+                                flight_dt = datetime.strptime(flight[key], "%Y-%m-%d %H:%M")
+                                query_dt = datetime.strptime(value, "%Y-%m-%d %H:%M")
+                                if flight_dt < query_dt:
+                                    match = False
+                                    break
+                            except:
+                                match = False
+                                break
+
+                        # ----------------------------
+                        # arrival_datetime ≤ query
+                        # ----------------------------
+                        elif key == "arrival_datetime":
+                            try:
+                                flight_dt = datetime.strptime(flight[key], "%Y-%m-%d %H:%M")
+                                query_dt = datetime.strptime(value, "%Y-%m-%d %H:%M")
+                                if flight_dt > query_dt:
+                                    match = False
+                                    break
+                            except:
+                                match = False
+                                break
+
+                        # ----------------------------
+                        # price ≤ query
+                        # ----------------------------
+                        elif key == "price":
+                            try:
+                                if float(flight[key]) > float(value):
+                                    match = False
+                                    break
+                            except:
+                                match = False
+                                break
+
+                        # ----------------------------
+                        # Unknown field in query
+                        # ----------------------------
+                        else:
                             match = False
                             break
-                        # Convert everything to string for comparison
-                        if str(flight[key]) != str(value):
-                            match = False
-                            break
+
                     if match:
                         matches.append(flight)
+
                 results.append({"query": q, "matches": matches})
+
             return results
         
         STUDENT_ID = "241ADB166"
@@ -118,7 +171,12 @@ def main():
         LAST_NAME = "Harris"
         DATE = datetime.now()
         TIME = datetime.now().time()
-        filename = ("response_{NAME}_{LAST_NAME}_{DATE.year}{DATE.month:02d}{DATE.day:02d}_{TIME.hour:02d}{TIME.minute:02d}.json")
+        #filename = ("response_{NAME}_{LAST_NAME}_{DATE.year}{DATE.month:02d}{DATE.day:02d}_{TIME.hour:02d}{TIME.minute:02d}.json")
+        filename = (
+                    f"response_{STUDENT_ID}_{NAME}_{LAST_NAME}_"
+                    f"{DATE.year}{DATE.month:02d}{DATE.day:02d}_"
+                    f"{TIME.hour:02d}{TIME.minute:02d}.json"
+        )
 
         queries = normalize_queries(queries)
         result = run_queries(valid_flights, queries)

@@ -87,6 +87,8 @@ def csv_parse(file_path):
                                 })
             
         return valid_flights, errors_list
+    
+    
 
     """ 
         with open("Errors.txt", mode='a') as error_file:
