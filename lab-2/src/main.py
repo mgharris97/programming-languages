@@ -184,6 +184,7 @@ def main():
         with open(filename, "w") as f:
             json.dump(result, f, indent=2)
         print("Query results written to query_results.json")    
+        
             
 
 
