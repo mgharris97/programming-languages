@@ -11,12 +11,13 @@ import json
 
 
 #CSV parse method
-errors_list = []
-valid_flights = []
+
 
 
 
 def csv_parse(file_path):
+    errors_list = []
+    valid_flights = []
     print(f"Opening file: {file_path}")
     with open(file_path, newline='', mode = 'r') as f:
         csv_file = csv.reader(f)

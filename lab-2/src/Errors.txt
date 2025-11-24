@@ -1,106 +1,4 @@
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 3: JFK → Invalid destiantion (not 3 uppercase letters)
-Line 4: RIX → Invalid destiantion (not 3 uppercase letters)
-Line 5: OSL → Invalid destiantion (not 3 uppercase letters)
-Line 6: HEL → Invalid destiantion (not 3 uppercase letters)
-Line 7: LHR → Invalid destiantion (not 3 uppercase letters)
-Line 8: ARN → Invalid destiantion (not 3 uppercase letters)
-Line 9: DXB → Invalid destiantion (not 3 uppercase letters)
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 13: LON → Invalid destiantion (not 3 uppercase letters)
-Line 14: RIX → Invalid destiantion (not 3 uppercase letters)
-Line 15: RIX → Invalid destiantion (not 3 uppercase letters)
-Line 16: SYD → Invalid destiantion (not 3 uppercase letters)
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: RIX → Invalid destiantion (not 3 uppercase letters)
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: LHR → Invalid destiantion (not 3 uppercase letters)
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 15: XXX → Invalid destiantion (not 3 uppercase letters)
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 15: XXX → Invalid origin (not 3 uppercase, non-repeating letters)
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
+===Start of files in: /Users/Matt/Desktop/CSVs===
 Line 1: flight_id → flight ID not 2-8 alphanumeric character
 Line 2: # === Valid flights === → comment line, ignored for parsing
 Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
@@ -113,9 +11,6 @@ Line 17:  → Invalid destiantion (not 3 uppercase letters)
 Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
 Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
 Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
 Line 1: flight_id → flight ID not 2-8 alphanumeric character
 Line 2: # === Valid flights === → comment line, ignored for parsing
 Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
@@ -128,34 +23,5 @@ Line 17:  → Invalid destiantion (not 3 uppercase letters)
 Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
 Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
 Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 15: XXX → Invalid origin (not 3 uppercase, non-repeating letters)
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
-
-===Start of file [db.csv]===
-Line 1: flight_id → flight ID not 2-8 alphanumeric character
-Line 2: # === Valid flights === → comment line, ignored for parsing
-Line 11: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
-Line 12: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
-Line 13: INVALID_DATE → Arrival time occurs before departure → 2025-11-15 11:00
-Line 14: 2025-11-15 12:00 → Arrival time occurs before departure → 2025-11-15 14:00
-Line 15: XXX → Invalid origin (not 3 uppercase, non-repeating letters)
-Line 16: INVALID_DATETIME → Invalid departure datetime
-Line 17:  → Invalid destiantion (not 3 uppercase letters)
-Line 18: -10.00 → Price cannot be negative. Aint no one here paying you to fly w us
-Line 19: LH999999999 → flight ID not 2-8 alphanumeric character
-Line 20: 2025-13-40 10:00 → Invalid departure datetime
-===End of file [db.csv]===
+===End of files in: /Users/Matt/Desktop/CSVs===
 

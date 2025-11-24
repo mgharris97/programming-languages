@@ -48,9 +48,15 @@ def main():
     #---------------------------------------------
     elif args.directory:
         dir_path = args.directory
+        #fix dir_parser to return valid and error lists
         valid, error = dir_parse(dir_path)
         valid_flights = valid
-        erros = error
+        errors = error
+        with open("Errors.txt", 'a') as f:
+            f.write(f"===Start of files in: {args.directory}===\n")
+            for i in errors:
+                f.write(i + "\n")
+            f.write(f"===End of files in: {(args.directory)}===\n\n")
 
     #---------------------------------------------
     # -j: load an existing JSON
