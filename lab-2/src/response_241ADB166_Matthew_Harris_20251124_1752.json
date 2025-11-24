@@ -1,0 +1,40 @@
+[
+  {
+    "query": {
+      "origin": "CDG",
+      "destination": "DXB"
+    },
+    "matches": [
+      {
+        "flight_id": "AF112",
+        "origin": "CDG",
+        "destination": "DXB",
+        "departure": "2025-11-20 21:10",
+        "arrival": "2025-11-21 05:45",
+        "price": "620.00"
+      }
+    ]
+  },
+  {
+    "query": {
+      "price": 90
+    },
+    "matches": [
+      {
+        "flight_id": "DY4501",
+        "origin": "OSL",
+        "destination": "ARN",
+        "departure": "2025-12-01 06:00",
+        "arrival": "2025-12-01 07:10",
+        "price": "75.00"
+      }
+    ]
+  },
+  {
+    "query": {
+      "departure_datetime": "2025-12-01 00:00",
+      "arrival_datetime": "2025-12-10 00:00"
+    },
+    "matches": []
+  }
+]

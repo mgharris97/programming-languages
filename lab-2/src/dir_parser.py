@@ -24,6 +24,7 @@ def dir_parse(dir_path):
         #Take one file at a time and if it ends with .csv -> send to csv_parse
     
     for i in files:
+
         if i.endswith(".csv"):
             print(f"Parsing: {i}")
             valid, err = csv_parse(i)
