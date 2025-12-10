@@ -1,0 +1,168 @@
+===Start of file [invalid.csv]===
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 11 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 12 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
+Line 13 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 14 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 15 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 16 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 17 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 18 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 19 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 20 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+===End of file [invalid.csv]===
+
+===Start of file [invalid.csv]===
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 11 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 12 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format
+Line 13 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 14 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 15 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 16 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 17 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 18 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 19 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 20 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 20 of invalid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+===End of file [invalid.csv]===
+
+===Start of file [invalid.csv]===
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 2 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 11 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 12 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 13 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 14 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 15 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 16 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 17 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 18 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 19 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 20 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 20 of invalid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+===End of file [invalid.csv]===
+
+===Start of file [invalid.csv]===
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'destination' → Invalid destiantion (not 3 uppercase letters)
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'departure_datetime' → Invalid departure datetime
+Line 1 of invalid.csv:['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'arrival_datetime' → Arrival time occurs before departure → departure_datetime
+Line 1 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'price' → Price must be a valid float
+Line 2 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 11 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 12 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 13 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 14 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 15 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 16 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 17 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 18 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 19 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 20 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 20 of invalid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+===End of file [invalid.csv]===
+
+===Start of file [invalid.csv]===
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'destination' → Invalid destiantion (not 3 uppercase letters)
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'departure_datetime' → Invalid departure datetime
+Line 2 of invalid.csv:['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'arrival_datetime' → Arrival time occurs before departure → departure_datetime
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'price' → Price must be a valid float
+Line 3 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 12 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 13 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 14 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 15 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 16 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 17 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 18 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 19 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 20 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 21 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 21 of invalid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+===End of file [invalid.csv]===
+
+===Start of file [invalid.csv]===
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'destination' → Invalid destiantion (not 3 uppercase letters)
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'departure_datetime' → Invalid departure datetime
+Line 2 of invalid.csv:['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'arrival_datetime' → Arrival time occurs before departure → departure_datetime
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'price' → Price must be a valid float
+Line 3 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 12 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 13 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 14 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 15 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 16 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 17 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 18 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 19 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 20 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 21 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 21 of invalid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+===End of file [invalid.csv]===
+
+===Start of files in: ./===
+Line 2 of valid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of valid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 2 of valid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'destination' → Invalid destiantion (not 3 uppercase letters)
+Line 2 of valid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'departure_datetime' → Invalid departure datetime
+Line 2 of valid.csv:['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'arrival_datetime' → Arrival time occurs before departure → departure_datetime
+Line 2 of valid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'price' → Price must be a valid float
+Line 3 of valid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 12 of valid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 13 of valid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 14 of valid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 15 of valid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 16 of valid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 17 of valid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 18 of valid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 19 of valid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 20 of valid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 21 of valid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 21 of valid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+Line 2 of db.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of db.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 2 of db.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'destination' → Invalid destiantion (not 3 uppercase letters)
+Line 2 of db.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'departure_datetime' → Invalid departure datetime
+Line 2 of db.csv:['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'arrival_datetime' → Arrival time occurs before departure → departure_datetime
+Line 2 of db.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'price' → Price must be a valid float
+Line 3 of db.csv: # === Valid flights === → comment line, ignored for parsing
+Line 12 of db.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 13 of db.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 14 of db.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 15 of db.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 16 of db.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 17 of db.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 18 of db.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 19 of db.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 20 of db.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 21 of db.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 21 of db.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']:'flight_id' → flight ID not 2-8 alphanumeric character
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'origin' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'destination' → Invalid destiantion (not 3 uppercase letters)
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'departure_datetime' → Invalid departure datetime
+Line 2 of invalid.csv:['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'arrival_datetime' → Arrival time occurs before departure → departure_datetime
+Line 2 of invalid.csv: ['flight_id', 'origin', 'destination', 'departure_datetime', 'arrival_datetime', 'price']: 'price' → Price must be a valid float
+Line 3 of invalid.csv: # === Valid flights === → comment line, ignored for parsing
+Line 12 of invalid.csv: # === Invalid flights (for testing validation) === → comment line, ignored for parsing
+Line 13 of invalid.csv: ['BADLINE', 'NO_DATE', 'NO_TIME'] → invalid format, have six cells
+Line 14 of invalid.csv:['BA_BAD', 'RIX', 'LON', '2025-11-15 11:00', 'INVALID_DATE', '250.00']: 'INVALID_DATE' → Arrival time occurs before departure → 2025-11-15 11:00
+Line 15 of invalid.csv:['SK404', 'OSL', 'RIX', '2025-11-15 14:00', '2025-11-15 12:00', '120.00']: '2025-11-15 12:00' → Arrival time occurs before departure → 2025-11-15 14:00
+Line 16 of invalid.csv: ['W61025', 'XXX', 'RIX', '2025-11-16 11:00', '2025-11-16 13:00', '80.00']: 'XXX' → Invalid origin (not 3 uppercase, non-repeating letters)
+Line 17 of invalid.csv: ['QR1', 'DOH', 'SYD', 'INVALID_DATETIME', '2025-11-17 23:30', '980.00']: 'INVALID_DATETIME' → Invalid departure datetime
+Line 18 of invalid.csv: ['KL1999', 'AMS', '', '2025-11-14 09:00', '2025-11-14 11:15', '180.00']: '' → Invalid destiantion (not 3 uppercase letters)
+Line 19 of invalid.csv: ['AY503', 'HEL', 'RIX', '2025-11-15 13:20', '2025-11-15 14:15', '-10.00']: '-10.00' → Price cannot be negative. Aint no one here paying you to fly w us
+Line 20 of invalid.csv: ['LH999999999', 'FRA', 'LAX', '2025-11-13 09:30', '2025-11-13 18:10', '700.00']:'LH999999999' → flight ID not 2-8 alphanumeric character
+Line 21 of invalid.csv: ['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 10:00' → Invalid departure datetime
+Line 21 of invalid.csv:['SN2902', 'BRU', 'LHR', '2025-13-40 10:00', '2025-13-40 12:00', '99.99']: '2025-13-40 12:00' → Arrival time occurs before departure → 2025-13-40 10:00
+===End of files in: ./===
+

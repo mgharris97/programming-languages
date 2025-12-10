@@ -1,0 +1,13 @@
+[
+    {
+        "origin": "CDG",
+        "destination": "DXB"
+    },
+    {
+        "price": 90
+    },
+    {
+        "departure_datetime":"2025-12-01 00:00",
+        "arrival_datetime": "2025-12-10 00:00"
+    }
+]
